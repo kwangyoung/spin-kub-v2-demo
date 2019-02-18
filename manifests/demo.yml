@@ -26,6 +26,7 @@ spec:
   template:
     metadata:
       labels:
+        load-balancer-spinnaker-demo-lb: 'true'
         source: demo
         app: spinnaker
     spec:
@@ -49,8 +50,12 @@ apiVersion: v1
 metadata:
   name: spinnaker-demo
   namespace: default
+  annotations:
+    service.beta.kubernetes.io/oci-load-balancer-shape: 400Mbps
 spec:
+  type: LoadBalancer
   selector:
+    load-balancer-spinnaker-demo-lb: 'true'
     source: demo
     app: spinnaker
   ports:
@@ -58,4 +63,4 @@ spec:
     port: 80
     targetPort: 8000
 
-#comment - deploy test with tag v1.5
+#comment - deploy test with load balancer
