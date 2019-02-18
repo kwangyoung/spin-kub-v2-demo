@@ -58,4 +58,4 @@ spec:
     port: 80
     targetPort: 8000
 
-#comment - deploy test with tag
+#comment - deploy test with tag v1.5
