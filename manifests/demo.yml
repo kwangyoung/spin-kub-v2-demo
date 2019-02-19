@@ -63,4 +63,4 @@ spec:
     port: 80
     targetPort: 8000
 
-#comment - deploy test with load balancer
+#comment - deploy test with Oracle Cloud Infra load balancer
